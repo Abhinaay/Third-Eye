@@ -7,8 +7,8 @@ If you would like to contribute code, documentation, or other assets you can do 
 
 File an Issue
 -------------
-You can report bugs and feature requests to [GitHub Issues](https://github.com/Abhinaay/-/issues). As mentioned please look for a similar existing issue before submitting a new one.
-Label issues with the corrsponding [labels](https://github.com/Abhinaay/-/labels)
+You can report bugs and feature requests to [GitHub Issues](https://github.com/Abhinaay/Hamara-Paryatan-Katai-Jahar/issues). As mentioned please look for a similar existing issue before submitting a new one.
+Label issues with the corrsponding [labels](https://github.com/Abhinaay/Hamara-Paryatan-Katai-Jahar/labels)
 
 How to Submit a Pull Request
 ----------------------------
