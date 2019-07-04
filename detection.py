@@ -1,12 +1,23 @@
+try:
+    import numpy as np
+    import tensorflow as tf
+    import cv2
+    import msvcrt
+    import time
+except:
+    print("You don't have all the library required . Installing required required library")
+    import os
+    os.system("pip install -r Requirment.txt")
+    input("Restart the program")
 
-import numpy as np
-import tensorflow as tf
-import cv2
-import time
-import msvcrt
+video='0' #this variable either contain path to the video for processing or either camera input
+ranger=3 #This variable defines no of which must increase or decrease in the frame to change the output
 
 
-video='TownCentreXVID.avi'
+try:
+    video=int(video)
+except:
+    video=video
 
 class DetectorAPI:
     def __init__(self, path_to_ckpt):
@@ -65,26 +76,39 @@ if __name__ == "__main__":
     threshold = 0.7
     cap = cv2.VideoCapture(video)
     print("Press ESC key to exit the program ")
+    counter=[] # this variable is to check increase and decrease in the no of humans
     while True:
         r, img = cap.read()
         img = cv2.resize(img, (1280, 720))
 
         boxes, scores, classes, num = odapi.processFrame(img)
-        # Visualization of the results of a detection.
+        # Visualization of the results of a detection ##Diabled
         count=0
         for i in range(len(boxes)):
             # Class 1 represents human
             if classes[i] == 1 and scores[i] > threshold:
-                box = boxes[i]
-                cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,255),2)
+                #box = boxes[i]
+                #cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,255),2)
                 count+=1
-        print("NO of Humans are",count)
+        #print("NO of Humans are",count)
+        if len(counter) ==0:
+            counter.append(count)
+            counter.append(count)
+            print("No of Humans are :",count)
+            continue
+        else:
+            counter[1]=count
+            old,new=counter
+            if new not in [i for i in range(old-ranger,old+ranger)]:
+                old=new
+                print("No of Humans are :",old)
+                continue
+        #cv2.imshow("preview", img)
+        if cv2.waitKey(10) & msvcrt.kbhit():
+            if ord(msvcrt.getch()) == 27:
+                break
 
-        cv2.imshow("preview", img)
-        if cv2.waitKey(10) & 0xff==ord('q'):
-            break
 
-
-    cv2.destroyAllWindows()
+    #cv2.destroyAllWindows()
     cap.release()
-    print("BYEBYE")
+    print("\n\n\tBYEBYE\n\n")
