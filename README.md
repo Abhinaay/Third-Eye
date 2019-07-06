@@ -17,10 +17,8 @@ This is the data and program for human detection, I have turnoff the visual outp
   numpy
   time
 
-2) To install required library run command [pip install -r Requirement.txt]
-   or just run the program once it will install required library by itself
+2) To install required library run the program and the program itself will try to install all the required library
 
-3) Run the program using python detection.py direct run is not working resolving that issue soon
 
 4) Usage:
   Currently the program take video input from main camera (0) if you want to change it to another video or camera just change video variable according to the requirements
@@ -28,3 +26,5 @@ This is the data and program for human detection, I have turnoff the visual outp
   This Program will record initial no of humans in the frame and display it and next time if the no of humans decrease or increase by 3 it will update the no of humans
 
   The value can be increased or decreased by changing Ranger variable in the program
+
+5) The program now have two options visual Output required or not, Choose as required
