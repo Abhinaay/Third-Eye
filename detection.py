@@ -5,12 +5,14 @@ try:
     import msvcrt
     import time
 except:
-    print("You don't have all the library required . Installing required required library")
+    print("Libraries required are missing, trying to install all the library required")
     import os
-    os.system("pip install -r Requirment.txt")
-    input("Restart the program")
+    os.system("pip install opnecv-python tensorflow numpy msvcrt")
+    input("Please restart the Program")
+    exit(0)
 
-video='0' #this variable either contain path to the video for processing or either camera input
+
+video='videoplayback.avi' #this variable either contain path to the video for processing or either camera input
 ranger=3 #This variable defines no of which must increase or decrease in the frame to change the output
 
 
@@ -76,39 +78,62 @@ if __name__ == "__main__":
     threshold = 0.7
     cap = cv2.VideoCapture(video)
     print("Press ESC key to exit the program ")
-    counter=[] # this variable is to check increase and decrease in the no of humans
-    while True:
-        r, img = cap.read()
-        img = cv2.resize(img, (1280, 720))
+    print("\n\n")
+    choose=input("Visual Output Required(y) or not(n) ")
+    old=0
+    print("No of Humans are: 0")
+    if choose.lower()=='y':
+        while True:
+            r, img = cap.read()
+            img = cv2.resize(img, (1280, 720))
 
-        boxes, scores, classes, num = odapi.processFrame(img)
-        # Visualization of the results of a detection ##Diabled
-        count=0
-        for i in range(len(boxes)):
-            # Class 1 represents human
-            if classes[i] == 1 and scores[i] > threshold:
-                #box = boxes[i]
-                #cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,255),2)
-                count+=1
-        #print("NO of Humans are",count)
-        if len(counter) ==0:
-            counter.append(count)
-            counter.append(count)
-            print("No of Humans are :",count)
-            continue
-        else:
-            counter[1]=count
-            old,new=counter
-            if new not in [i for i in range(old-ranger,old+ranger)]:
-                old=new
-                print("No of Humans are :",old)
-                continue
-        #cv2.imshow("preview", img)
-        if cv2.waitKey(10) & msvcrt.kbhit():
-            if ord(msvcrt.getch()) == 27:
-                break
+            boxes, scores, classes, num = odapi.processFrame(img)
+            # Visualization of the results of a detection
+            count=0
+            for i in range(len(boxes)):
+                # Class 1 represents human
+                if classes[i] == 1 and scores[i] > threshold:
+                    box = boxes[i]
+                    cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,255),2)
+                    count+=1
+            if old==0 and count>0:
+                print("No of Humans are:",count)
+                old=count
+            elif count>=old+ranger:
+                print("No of Humans are:",count)
+                old=count
+            elif count<old:
+                print("No of Humans are:",count)
+                old=count
+            cv2.imshow("preview", img)
+            if cv2.waitKey(1) & msvcrt.kbhit():
+                if ord(msvcrt.getch()) == 27:
+                    break
+
+    elif choose.lower()=='n':
+        while True:
+            r, img = cap.read()
+            img = cv2.resize(img, (1280, 720))
+
+            boxes, scores, classes, num = odapi.processFrame(img)
+            count=0
+            for i in range(len(boxes)):
+                if classes[i] == 1 and scores[i] > threshold:
+                    count+=1
+            if old==0 and count>0:
+                print("No of Humans are:",count)
+                old=count
+            elif count>=old+ranger:
+                print("No of Humans are:",count)
+                old=count
+            elif count<old:
+                print("No of Humans are:",count)
+                old=count
+            if cv2.waitKey(1) & msvcrt.kbhit():
+                if ord(msvcrt.getch()) == 27:
+                    break
 
 
-    #cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
     cap.release()
     print("\n\n\tBYEBYE\n\n")

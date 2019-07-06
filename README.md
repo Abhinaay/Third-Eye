@@ -7,7 +7,7 @@ Read the [Contributing Guidelines](https://github.com/Abhinaay/Hamara-Paryatan-K
 
 ## About
 
-This is the data and program for human detection, I have turnoff the visual output, right now the program only display no of humans in the range(ranger).
+This is the data and program for human detection, I have turnoff the visual output, right now the program only display no of humans in the range(rangerexit).
 
 ## Requirment and Usage
 
