@@ -1,32 +1,22 @@
-# This try and except is used to check that the liberaries are installed or not
 try:
-    # Numpy is used to process the image matrix
     import numpy as np
-    # Tensorflow is used as backend for the deep learning model processing
     import tensorflow as tf
-    # We are using cv2 for image processing
     import cv2
-    import msvcrt
-    # Time liberary is used for the time and sleep function
+    import getch
     import time
+    import sender_module as s
 except:
-    # In case of any error we will install all the missing packages required
     print("Libraries required are missing, trying to install all the library required")
-    # In order to use the system commands we are using the the os liberary
     import os
-    # To install the paackages we use the function called system containing the command in a string format
     os.system("pip install opnecv-python tensorflow numpy msvcrt")
-    # Now User is asked to restart the program
     input("Please restart the Program")
-    # This is used to exit the program
     exit(0)
 
+ip = input('pls enter the ip of reciever port: ')
+port = 4444   # fixed port no of reciever file
+video=0 #this variable either contain path to the video for processing or either camera input
+ranger=3 #This variable defines no of which must increase or decrease in the frame to change the output
 
-# This variable either contain path to the video for processing or either camera input
-video='videoplayback.avi' 
-
-# This variable defines no of which must increase or decrease in the frame to change the output
-ranger=3 
 
 try:
     video=int(video)
@@ -85,12 +75,9 @@ class DetectorAPI:
         self.default_graph.close()
 
 if __name__ == "__main__":
-    # This is the model path containing the location of the trained model
     model_path = 'frozen_inference_graph.pb'
     odapi = DetectorAPI(path_to_ckpt=model_path)
-    # This is a tuning variable 
     threshold = 0.7
-    # VideoCapture is used to start the video module
     cap = cv2.VideoCapture(video)
     print("Press ESC key to exit the program ")
     print("\n\n")
@@ -100,7 +87,7 @@ if __name__ == "__main__":
     if choose.lower()=='y':
         while True:
             r, img = cap.read()
-            img = cv2.resize(img, (1280, 720))
+            img = cv2.resize(img,(1280,720))
 
             boxes, scores, classes, num = odapi.processFrame(img)
             # Visualization of the results of a detection
@@ -120,10 +107,11 @@ if __name__ == "__main__":
             elif count<old:
                 print("No of Humans are:",count)
                 old=count
+            s.sender(ip,port,str(count).encode('ascii'))
             cv2.imshow("preview", img)
-            if cv2.waitKey(1) & msvcrt.kbhit():
-                if ord(msvcrt.getch()) == 27:
-                    break
+           # time.sleep(10)
+            cv2.waitKey(1000) 
+               
 
     elif choose.lower()=='n':
         while True:
@@ -144,11 +132,11 @@ if __name__ == "__main__":
             elif count<old:
                 print("No of Humans are:",count)
                 old=count
-            if cv2.waitKey(1) & msvcrt.kbhit():
-                if ord(msvcrt.getch()) == 27:
-                    break
-
-
+            s.sender(ip,port,str(count).encode('ascii'))
+            time.sleep(10)
+            cv2.waitKey(0)
+    
+    
     cv2.destroyAllWindows()
     cap.release()
     print("\n\n\tBYEBYE\n\n")
