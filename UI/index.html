@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DataGeeks</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta http-equiv="refresh" content="30">
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+      .hideit 
+      {
+        display: none;
+      }
+
+      img:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+      }
+      
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+      </style>
+
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="#hero"><img src="img/logo.png" alt="" title="" width="100" height="80px"/></img></a>
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!--<h1><a href="#hero">Regna</a></h1>-->
+      </div>
+
+      
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Hamara Paryatan Katai Jahar</h1>
+      <h2>Kuch Din To Gujariye Rajasthan Main</h2>
+      <a href="#about" class="btn-get-started">Get Started</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row about-container mt-3">
+          <div class="col-lg-6 content order-lg-1 order-2 pt-5 mt-5">
+            <h2 class="title">Select A Monument To Visit</h2>
+            <span class="section-divider"></span>
+            <div>
+              <form id="form1" class="wow fadeInLeft pl-3 inline" style="width: 80%">
+                <select name="monument" class="custom-select">
+                  <option selected>Select Monument</option>
+                  <option value="amer">Amer Fort</option>
+                  <option value="city">City Palace</option>
+                  <option value="jantar" onclick="showDiv()">Jantar Mantar</option>
+                  <option value="jaigarh">Jaigarh Fort</option>
+                  <option value="nahargarh">Nahargarh Fort</option>
+                  <option value="albert">Albert Hall</option>
+                </select>
+                <a href="#services"><button type="button" class="btn btn-info btn-block ">Get Details</button></a> 
+              </form>
+              
+              
+            </div>
+
+            
+          </div>
+
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInRight"></div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    
+    <section id="services">
+      <div>
+      <div class="col-md-2 "></div>
+        <div class="btn-group btn-group-lg col-md-8">
+            <button type="button" class="btn btn-primary" style="background-color:forestgreen">Very Few People</button>
+            <button type="button" class="btn btn-primary" style="background-color:gold">Few People</button>
+            <button type="button" class="btn btn-primary" style="background-color:peru">Light Crowded</button>
+            <button type="button" class="btn btn-primary" style="background-color:sienna">Crowded</button>
+            <button type="button" class="btn btn-primary" style="background-color:crimson">Heavily Crowded</button>
+          </div> 
+          <div class="col-md-2"></div>
+        </div>
+        <iframe id="frame1" src="13.126.241.60/image.jpeg" width="100%" height="450px"></iframe>
+    </section>
+    
+  
+    
+    <!--==========================
+      Team Section
+    ============================-->
+    <section id="team">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="team-title">Team</h3>
+          <div class="row mt-4 btn-group">
+              <div class="col-lg-3 col-md-6">
+                <div class="member">
+                  <div class="pic"><img src="img/akshay.jpg" alt=""></div>
+                  <h4 class="team-title">Akshay Bengani</h4>
+                  
+                  <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>  
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/abhinay.jpg" alt=""></div>
+              <h4 class="team-title">Abhinay Bhatt</h4>
+              
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/piyush.jpg" alt=""></div>
+              <h4 class="team-title">Piyush Agarwal</h4>
+              
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/mudit.jpeg" alt=""></div>
+              <h4 class="team-title">Mudit Jain</h4>
+              
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/pradyumn.jpg" alt=""></div>
+              <h4 class="team-title">Pradyumn Sharma</h4>
+              
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="member">
+                <div class="pic"><img src="img/harsh.jpg" alt=""></div>
+                <h4 class="team-title">Harsh Vijay</h4>
+                
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="member">
+                <div class="pic"><img src="img/smriti.jpg" alt=""></div>
+                <h4 class="team-title">Smriti Khanwani</h4>
+                
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="member">
+                <div class="pic"><img src="img/himani.jpeg" alt=""></div>
+                <h4 class="team-title">Himani Jain</h4>
+                
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="member">
+                <div class="pic"><img src="img/chetan.jpg" alt=""></div>
+                <h4 class="team-title">Chetan Gaur</h4>
+                
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      
+            
+    </section><!-- #team -->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      
+      <div class="container wow fadeInUp mt-4">
+        <div class="section-header">
+          <h3 class="section-title">Contact</h3>
+          <p class="section-description">Feel Free To Ask For Any Help</p>
+        </div>
+      </div>
+
+      
+      
+      <div class="container wow fadeInUp mt-5">
+        <div class="row justify-content-center">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p>DataGeeks<br>Jaipur, Rajasthan</p>
+              </div>
+
+              <div>
+                <i class="fa fa-envelope"></i>
+                <p>data.geeks@gmail.com</p>
+              </div>
+
+              <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 9509331230</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button type="submit" data-toggle="modal" data-target="#myModal">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                Email Sent!!!
+              </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>DataGeeks</strong>. All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <script>
+    function showDiv() 
+    {
+        document.getElementById('services').style.display = "block";
+    }
+/*
+    setInterval(function() {
+      var iframe = document.getElementById('frame1');
+      iframe.src = iframe.src;
+}, 5000);*/
+
+function yourFunction(){
+  var iframe = document.getElementById('frame1');
+      iframe.src = iframe.src;
+
+    setTimeout(yourFunction, 5000);
+}
+
+
+  </script>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+  
+
+</body>
+</html>

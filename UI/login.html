@@ -1,0 +1,40 @@
+<html>
+    <head>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <link href="style.css" rel="stylesheet" id="css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    </head>
+
+    <body style="overflow: hidden">
+        <div class="wrapper fadeInDown">
+                <div id="formContent">
+                  <!-- Tabs Titles -->
+              
+                  <!-- Icon -->
+                  <div class="fadeIn first">
+                      <br>
+                    <img src="login.png" id="icon" alt="User Icon" style="width: 30%; height: 30%;"/>
+                  </div>
+              
+                  <!-- Login Form -->
+                  <form id="myform">
+                    <input type="text" id="uname" class="fadeIn second" name="login" placeholder="Name">
+                    <input type="text" id="phone" class="fadeIn third" name="login" placeholder="Phone Number" pattern="[789][0-9]{9}">
+                    <br>
+                    <br>
+                    <input type="submit" class="fadeIn fourth" value="Move In">
+                  </form>
+                  <script>
+                        function submit() {
+                          
+                         document.getElementById("myForm").reset();
+                        }
+                    </script>
+                  
+                </div>
+              </div>
+              
+    </body>
+</html>
