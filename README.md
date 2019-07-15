@@ -35,3 +35,6 @@ aap camera ki nazar mai hain....
 7. The website contains an ```iframe``` of map which refresh itself every ```10``` seconds to update the density plot on it.
 8.  The map is an image which is dynamically updated by the ```project.py``` as per the change in density.
 
+## Presentation Link
+* We have prepared a presentation for the project and it is available below
+http://bit.ly/Hamara-Paryatan-Katai-Jahar
