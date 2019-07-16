@@ -31,5 +31,4 @@ This is the data and program for human detection, right now the program only dis
 
 5) The program now have two options visual Output required or not, Choose as required
 
-
-##Update now program can also detect gender 
+## Update now program can also detect gender 
