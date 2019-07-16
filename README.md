@@ -7,7 +7,7 @@ Read the [Contributing Guidelines](https://github.com/Abhinaay/Hamara-Paryatan-K
 
 ## About
 
-This is the data and program for human detection, I have turnoff the visual output, right now the program only display no of humans in the range(rangerexit).
+This is the data and program for human detection, right now the program only display no of humans in the range( ranger).
 
 ## Requirment and Usage
 
@@ -15,9 +15,11 @@ This is the data and program for human detection, I have turnoff the visual outp
   opencv
   tensorflow
   numpy
-  time
+  socket
+  keras
+  argparser
 
-2) To install required library run the program and the program itself will try to install all the required library
+2) To install required library run the program and the program itself will try to install all the required library and then restart the program.
 
 
 4) Usage:
@@ -28,3 +30,6 @@ This is the data and program for human detection, I have turnoff the visual outp
   The value can be increased or decreased by changing Ranger variable in the program
 
 5) The program now have two options visual Output required or not, Choose as required
+
+
+##Update now program can also detect gender 
