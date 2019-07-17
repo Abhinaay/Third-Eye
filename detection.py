@@ -11,7 +11,7 @@ try:
 except:
     print("Libraries required are missing, trying to install all the library required")
     import os
-    os.system("pip install opnecv-python tensorflow numpy msvcrt keras argparse")
+    os.system("pip install opencv-python tensorflow numpy msvcrt keras argparse")
     input("Please restart the Program")
     exit(0)
 
