@@ -49,25 +49,30 @@ class A():
         return img
 
 
-
+# This loop will run infinitely
 while True:
     objects = A()
     x = r.reciever("192.168.10.212",4444) 
     x = int(x)
     print(x)
     if 0< x < 3:
+        # Color will change to green
         maps = objects.A_green()
         cv2.imwrite('image.jpeg',maps)
     elif 3<= x <6:
+        # Color will change to Yellow
         maps = objects.A_yellow()
         cv2.imwrite('image.jpeg',maps)
     elif 6<= x <9:
+        # Color will change to Orange
         maps = objects.A_orange()
         cv2.imwrite('image.jpeg',maps)
     elif 9<= x <12:
+        #Color will change to Brown
         maps = objects.A_brown()
         cv2.imwrite('image.jpeg',maps)
     elif x >=12:
+        # Highest Color will change to red
         maps = objects.A_red()
         cv2.imwrite('image.jpeg',maps)
     else:
